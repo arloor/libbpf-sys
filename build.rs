@@ -274,6 +274,7 @@ fn make_elfutils(compiler: &cc::Tool, src_dir: &path::Path, out_dir: &path::Path
     let out_lib = format!("-L{}", out_dir.display());
     let status = process::Command::new("./configure")
         .arg("--enable-maintainer-mode")
+        .arg("--disable-demangler")
         .arg("--disable-debuginfod")
         .arg("--disable-libdebuginfod")
         .arg("--without-zstd")
